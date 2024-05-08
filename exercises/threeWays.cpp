@@ -41,3 +41,4 @@ bool isDivisibleBy3(int np)
 {
     return (np % 3 == 0);
 }
+
