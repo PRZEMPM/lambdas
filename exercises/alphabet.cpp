@@ -5,11 +5,23 @@
 
 #include <iostream>
 
-int main() {
+int main()
+{
+    auto alphabet = [letter = 'a']() mutable
+    {
+        if (letter == (char)('z' + 1))
+            letter = 'A';
+        else if (letter == (char)('Z' + 1))
+            letter = 'a';
 
-    for (int i = 0; i < 100; ++i) {
-        // std::cout << alphabet();
+        return letter++;
+    };
+    
+    for (int i = 0; i < 100; ++i)
+    {
+        std::cout << alphabet() << " | ";
     }
+    
     std::cout << '\n';
     return 0;
 }
